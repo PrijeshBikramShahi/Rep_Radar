@@ -4,6 +4,7 @@ import 'package:rep_radar/screens/dashboard.dart';
 import 'package:rep_radar/screens/homescreen.dart';
 import 'package:rep_radar/screens/profile.dart';
 import 'package:rep_radar/screens/track.dart';
+import 'package:rep_radar/utils/shared/appbar.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -25,15 +26,7 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          toolbarHeight: 80,
-          backgroundColor: Colors.blueAccent,
-          actions: [
-            CircleAvatar(
-              
-            ),
-          ],
-        ),
+        appBar: PreferredSize(preferredSize: Size(0, 90), child: Appbar()),
         body: _pages[_currentIndex],
         bottomNavigationBar: CupertinoTabBar(
           currentIndex: _currentIndex,
