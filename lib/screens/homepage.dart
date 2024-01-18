@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:rep_radar/screens/dashboard.dart';
 import 'package:rep_radar/screens/homescreen.dart';
 import 'package:rep_radar/screens/profile.dart';
@@ -14,7 +15,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  int _currentIndex = 0;
+  int _currentIndex = 1;
 
   List<Widget> _pages = [
     Homescreen(),
@@ -26,22 +27,24 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.grey[900],
         appBar: PreferredSize(preferredSize: Size(0, 90), child: Appbar()),
         body: _pages[_currentIndex],
         bottomNavigationBar: CupertinoTabBar(
+          activeColor: Colors.red,
           currentIndex: _currentIndex,
           items: [
             BottomNavigationBarItem(
-              icon: Icon(Icons.home),
+              icon: FaIcon(FontAwesomeIcons.houseChimney),
             ),
             BottomNavigationBarItem(
-              icon: Icon(Icons.home),
+              icon: FaIcon(FontAwesomeIcons.fireFlameCurved),
             ),
             BottomNavigationBarItem(
-              icon: Icon(Icons.home),
+              icon: FaIcon(FontAwesomeIcons.personRunning),
             ),
             BottomNavigationBarItem(
-              icon: Icon(Icons.home),
+              icon: FaIcon(FontAwesomeIcons.userAstronaut),
             ),
           ],
           onTap: (value) {

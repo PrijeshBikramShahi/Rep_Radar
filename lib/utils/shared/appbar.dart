@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:rep_radar/utils/shared/fontstyles.dart';
 
 class Appbar extends StatefulWidget {
   const Appbar({super.key});
@@ -8,6 +10,7 @@ class Appbar extends StatefulWidget {
 }
 
 class _AppbarState extends State<Appbar> {
+  MyFontStyle _fontStyle = MyFontStyle();
   @override
   Widget build(BuildContext context) {
     return AppBar(
@@ -18,22 +21,42 @@ class _AppbarState extends State<Appbar> {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Column(
-              mainAxisAlignment: MainAxisAlignment.end,
-              children: [
-                Text(
-                  "GOOD MORNING,\nPrijesh Bikram Shahi",
-                  style: TextStyle(fontSize: 24),
-                ),
-              ],
+            Padding(
+              padding: const EdgeInsets.all(10.0),
+              child: Column(
+                mainAxisSize: MainAxisSize.max,
+                mainAxisAlignment: MainAxisAlignment.end,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    "GOOD MORNING,",
+                    textHeightBehavior: TextHeightBehavior(
+                      applyHeightToFirstAscent: false,
+                      applyHeightToLastDescent: false,
+                    ),
+                    style: _fontStyle.greetText,
+                  ),
+                  Text(
+                    "Prijesh Bikram Shahi",
+                    textHeightBehavior: TextHeightBehavior(
+                      applyHeightToFirstAscent: false,
+                      applyHeightToLastDescent: true,
+                    ),
+                    style: _fontStyle.userName,
+                  ),
+                ],
+              ),
             ),
-            Column(
-              mainAxisAlignment: MainAxisAlignment.end,
-              children: [
-                CircleAvatar(
-                  radius: 36,
-                ),
-              ],
+            Padding(
+              padding: const EdgeInsets.all(10.0),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  CircleAvatar(
+                    radius: 36,
+                  ),
+                ],
+              ),
             ),
           ],
         ),
