@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:rep_radar/utils/shared/appbar.dart';
 
 class Homescreen extends StatefulWidget {
   const Homescreen({super.key});
@@ -13,7 +14,9 @@ class _HomescreenState extends State<Homescreen> {
     return Container(
       height: MediaQuery.of(context).size.height,
       child: Column(
+
         children: [
+          Appbar(),
           Expanded(
             flex: 3,
             child: Padding(
