@@ -35,7 +35,7 @@ class _DashboardState extends State<Dashboard> {
               itemCount: workouts.length,
               itemBuilder: (context, index) {
                 return WorkoutTile(
-                  workoutName: workouts[index],
+                  workoutName: workouts[index][0],
                   fontStyle: _fontStyle,
                 );
               }),

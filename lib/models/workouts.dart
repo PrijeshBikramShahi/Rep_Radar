@@ -1,8 +1,8 @@
 import 'package:rep_radar/models/exercises.dart';
 
 class Workout {
-  final String nxame;
+  final String name;
   final List<Exercise> exercises;
 
-  Workout({required this.nxame, required this.exercises});
+  Workout({required this.name, required this.exercises});
 }
